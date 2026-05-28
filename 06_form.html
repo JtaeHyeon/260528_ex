@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form id="joinForm" 
+    style="
+      display: flex;
+      gap: 12px;
+      
+      "
+    >
+      <label> 유저네임: <input id="username" required /> </label>
+      비밀번호: <input type="password" id="password" required />
+      <button>제출</button>
+      <!-- <button type="submit">제출</button> 이게 디폴트-->
+      <!-- <button type="button">클릭</button> -->
+      <a href="https://www.google.com" id="link">링크</a>
+    </form>
+    <script>
+      document.querySelector("#link");
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log("링크가 클릭되었습니다");
+      });
+      const form = document.querySelector("#joinForm");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); //기본 form통신을 막는 것
+        console.log(event.target.username.value);
+        console.log(event.target.password.value);
+        console.log("제출되었습니다");
+      });
+    </script>
+  </body>
+</html>
