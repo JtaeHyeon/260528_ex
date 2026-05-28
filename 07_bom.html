@@ -1,11 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bom</title>
+  </head>
+  <body>
+    <script>
+      console.log("this", this);
+      //현재 스코프 범위를 감싸고 있는 객체
+      console.log("", globalThis);
+      function f1() {
+        console.log("function2 :", this);
+      }
+      f1();
+      const f2 = function () {
+        console.log("function2 :", this);
+      };
+      const f3 = () => {
+        console.log("function3 :", this);
+      };
+      f2();
+      f3();
+      console.log(window, f1());
+
+      setTimeout(
+        () => console.log("setTimeout"),
+        //함수
+        1000,
+        // 몇 초 뒤 이 함수를 실행할 것인가(ms, 1/1000s)
+      );
+      // timeout과 구조는 같은데 1번으로 멈추지 않고 계속 실행
+      setInterval(() => console.log("setInterval"), 1000);
+    </script>
+  </body>
 </html>
