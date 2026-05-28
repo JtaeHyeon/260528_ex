@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인풋과 폼</title>
+  </head>
+  <body>
+    <form id="myForm" style="padding: 24px">
+      <!-- <label> 이름: <input type="text" id="formName" />
+      </label> -->
+      <!-- 감싸기로 할 수도 있고, for로 id를 연결할 수 있음 -->
+      <label for="formName"> 이름:</label>
+      <input
+        type="text"
+        id="formName"
+        placeholder="여기에 이름 입력"
+        maxlength="5"
+      />
+      <!-- Maxlength 믿으면 안된다. 개발자 도구로 변경가능 -->
+      <input type="number" step="10" />
+      <input type="color" />
+      <input type="checkbox" id="check" /><label for="check">제출 여부</label>
+      <br />
+      <select id="pet">
+        <option>강아지</option>
+        <option>고양이</option>
+        <option>병아리</option>
+      </select>
+      <select id="pet2">
+        <option value="1">강아지</option>
+        <option value="2">고양이</option>
+        <option value="3">병아리</option>
+      </select>
+      <input type="date" />
+      <input type="time" />
+      <input type="range" min="0" max="100" value="50" />
+      <input type="search" />
+      <input type="file" accept="." />
+      <br />
+      <label for="formPassword"> 비밀번호:</label>
+      <input type="password" id="formPassword" />
+      <br />
+      <label for="formLongText"> 자기소개: </label>
+      <textarea id="formLongText" style="resize: none"></textarea>
+      <!-- 중간에 노드가 안낌 -->
+    </form>
+    <button id="inputBtn">인풋 테스트용 버튼</button>
+    <script>
+      const nameInput = document.querySelector("#formName");
+      const passwordInput = document.querySelector("#formPassword");
+      const formLongText = document.querySelector("#formLongText");
+      const inputBtn = document.querySelector("#inputBtn");
+      inputBtn.addEventListener("click", (event) => {
+        console.log("nameInput", nameInput.value);
+        console.log("passwordInput", passwordInput.value);
+        console.log("formLongText", formLongText.value);
+        console.log("checkbox", document.querySelector("#check").checked);
+        console.log("pet1", document.querySelector("#pet").value);
+        console.log("pet2", document.querySelector("#pet2").value);
+      });
+    </script>
+  </body>
+</html>
